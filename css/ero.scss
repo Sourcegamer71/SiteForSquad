@@ -1,0 +1,90 @@
+#container
+{
+    display:flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    border: 2px solid rgb(189, 189, 189);
+    width: 80vw;
+    height: auto;
+    justify-content: space-around;
+    border-radius: 50px;
+}
+.card
+{
+    box-sizing: border-box;
+    width:120px;
+    height: 180px;
+    border: 1px solid black;
+    margin: 30px 30px;
+    background-image: url(../img/logo.jpg);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+button
+{
+    width: 100px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: rgb(168, 98, 98);
+}
+button:active
+{
+    background-color: aquamarine;
+}
+#rama
+{
+    margin: 10vh auto;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid rgb(129, 129, 129);
+    width: 80vw;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 25px 22px 27px 12px rgba(34, 60, 80, 0.37);
+-moz-box-shadow: 25px 22px 27px 12px rgba(34, 60, 80, 0.37);
+box-shadow: 25px 22px 27px 12px rgba(34, 60, 80, 0.37);
+}
+
+#ero
+{
+    display:none;
+    text-align: center;
+    margin: 20vh auto;
+}
+#ero img
+{
+    height: 100%;
+}
+.ero-div
+{
+    margin: 5vh auto;
+    height: 60vh;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 5vh;
+    width: 50vw;
+    animation-name: ero;
+    animation-duration: 2s;
+}
+.ero-text
+{
+    font-size: 2rem;
+}
+@keyframes ero
+{
+    0%
+    {
+        margin-left: 2000px;
+        opacity: 0;
+    }
+    100%
+    {
+        margin-left: 0px;
+        opacity: 1;
+    }
+}

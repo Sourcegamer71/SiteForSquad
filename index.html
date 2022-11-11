@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/styleMain.css">
   <link rel="stylesheet" href="css/zero.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script defer src="js/register.js"></script>
 </head>
 
 <body>
@@ -102,8 +103,37 @@
         </div>
       </section>
     </div>
+
+    <div class="register">
+      <form action="">
+        <div class="form-container">
+          <div class="form-item">
+          <input type="text" name="" id="names" placeholder="Введите имя">
+          <input type="text" name="" id="family" placeholder="Введите фамилию">
+          <input type="text" name="" id="father" placeholder="Введите отчество">
+        </div>
+        <div class="form-item"><input type="date" min="1900-01-01" max="2018-12-31" name=""     id="data" placeholder="Введите дату рождения">
+          <input type="number" min="2000" name="" id="year" placeholder="Введите год начала обучения">
+          <input type="text" name="" id="faculty" placeholder="Введите факультет">
+          </div>          
+        </div>
+        <p>Добавить фотографию</p>
+          <input type="file" src="" alt="" placeholder="Добавить фотографию">
+        
+      
+      
+      <button id="button">Встать в строй</button>
+      </form>
+      <p class="sort">Сортировать по: <button id="nameButton">имени</button><button id="familyButton">фамилии</button><button id="fatherButton">отчеству</button><button id="dateButton">дате рождения</button><button id="yearButton">году вступления</button><button id="facultyButton">специальности</button></p>
+      <div id="table"></div>
+    </div>
+    <hr>
     </main>
   </div>
+
+
+
+
   <footer>
     <div class="footer-container">
       <div class="footer-authors">
