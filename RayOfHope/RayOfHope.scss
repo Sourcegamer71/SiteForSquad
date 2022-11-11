@@ -1,0 +1,46 @@
+@mixin neon() {
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+$neonLight: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa,
+0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+#game
+{
+    background-image: url(1.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include neon();
+}
+div
+{
+    height: 100vh;
+}
+button
+{
+    height: 140px;
+    width: 200px;
+    background-color: rgb(14, 39, 0);
+    @include neon();
+    border: 1px solid #0fa;
+    border-radius: 20px;
+    box-shadow: $neonLight;
+}
+button:active
+{
+    background-color: black;
+    box-shadow: none;
+    color: rgb(167, 167, 167);
+}

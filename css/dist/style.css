@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  height: 75px;
+  background: #ff7700;
+  background: linear-gradient(0deg, #ff7700 0%, #f90202 100%);
+}
+
+.container {
+  background-color: beige;
+  flex-grow: 1;
+}
+
+footer {
+  height: 75px;
+  background-color: grey;
+}
