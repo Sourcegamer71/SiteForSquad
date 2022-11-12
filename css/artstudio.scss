@@ -1,0 +1,41 @@
+body
+{
+    background-color: rgb(235, 235, 235);
+}
+.art-container
+{
+    width: 90%;
+    background-color: rgb(241, 241, 241);
+    height: 50vh;
+    text-align: center;
+}
+.art-flex-container
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.art-flex
+{
+    height: 30vh;
+    width: 20vh;
+    border: 1px solid black;
+    margin: 3vh 2vw;
+    img
+    {
+        height: 80%;
+       width: 100%;
+
+    }
+    .art-flex-info
+    {
+        height: 10%;
+        font-size: 0.8rem;
+    }
+    button{
+
+        height: 10%;
+        width: 100%;
+        font-size: 0.6rem;
+    }
+}

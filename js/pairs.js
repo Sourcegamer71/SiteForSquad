@@ -3,14 +3,15 @@ let timecount = c;
 let count = 0;
 let check3 = document.querySelector('#check3'); 
 check3.addEventListener('click',gameStart);
-let input = document.querySelector('#input');
+let input = document.querySelector('#ero-input');
 let finishcont = document.createElement('div');
 finishcont.setAttribute('id','finish');
 let time;
 let timeText = document.createElement('h1');
+timeText.classList.add('ero-warning')
 timeText.textContent = 'Нажмите чтобы начать';
 let timeDiv = document.querySelector('#time');
-timeText.textContent = `Введите чётное число от 4 до 16`;
+timeText.textContent = `Для начала победите во всем знакомой игре "в пары".Введите чётное число от 4 до 16`;
 timeDiv.append(timeText);
 
 function win()
