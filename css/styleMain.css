@@ -199,6 +199,11 @@ main {
   width: 60%;
   height: 40%;
 }
+.register .register-head {
+  font-size: 1.6rem;
+  margin: 5vh auto;
+  font-weight: 700;
+}
 .register #warning {
   color: red;
   font-size: 0.6rem;
@@ -208,6 +213,10 @@ main {
 .register .form-container {
   display: flex;
   justify-content: space-evenly;
+}
+.register .messageReg {
+  font-style: italic;
+  margin: 3vh auto;
 }
 
 @media (max-width: 1100px) and (min-width: 450px) {

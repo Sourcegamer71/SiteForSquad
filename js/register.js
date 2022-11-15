@@ -21,41 +21,46 @@ let tableContainer = document.createElement('div')
 tableContainer.classList.add('table-container');
 table.appendChild(tableContainer);
 
-let tableHead = document.createElement('div');
-tableHead.classList.add('table-item');
-tableHead.classList.add('table-head');
-function headDeploy(headObject,text,container)
-{
-    headObject = document.createElement('div');
-    headObject.textContent = text;
-    container.append(headObject);
-}
-let headName, headFamily, headFather,headDate,headYear,headFaculty;
-headDeploy(headName,'Имя бойца',tableHead);
-headDeploy(headFamily,'Фамилия',tableHead);
-headDeploy(headFather,'Отчество',tableHead);
-headDeploy(headDate,'Дата рождения',tableHead);
-headDeploy(headYear,'Год вступления',tableHead);
-headDeploy(headFaculty,'Специальность',tableHead);
+// let tableHead = document.createElement('div');
+// tableHead.classList.add('table-item');
+// tableHead.classList.add('table-head');
+// function headDeploy(headObject,text,container)
+// {
+//     headObject = document.createElement('div');
+//     headObject.textContent = text;
+//     container.append(headObject);
+// }
+// let headName, headFamily, headFather,headDate,headYear,headFaculty;
+// headDeploy(headName,'Имя бойца',tableHead);
+// headDeploy(headFamily,'Фамилия',tableHead);
+// headDeploy(headFather,'Отчество',tableHead);
+// headDeploy(headDate,'Дата рождения',tableHead);
+// headDeploy(headYear,'Год вступления',tableHead);
+// headDeploy(headFaculty,'Специальность',tableHead);
+// let headCont = document.createElement('div');
+// let headBut = document.createElement('button');
+// headBut.textContent = 'Clear';
+// tableHead.append(headCont);
+// headCont.append(headBut);
+// headBut.addEventListener('click',()=>{
+//     AccContainer.innerHTML = '';
+// })
 
 tableContainer.appendChild(tableHead);
 let AccContainer = document.createElement('div');
 AccContainer.setAttribute('id','acc-container');
 tableContainer.after(AccContainer);
-let headCont = document.createElement('div');
-let headBut = document.createElement('button');
-headBut.textContent = 'Clear';
-tableHead.append(headCont);
-headCont.append(headBut);
-headBut.addEventListener('click',()=>{
-    AccContainer.innerHTML = '';
-})
+
+
 
 let array = [];
 
 function addAcc(e)
 {
     e.preventDefault();
+    let message = document.createElement('div')
+    message.textContent = 'Ваша заявка на вступление в ряды агентства Squad будет рассмотрена в ближайшее время';
+    message.classList.add('messageReg');
     let Name = AccName.value.trim();
     let Family = AccFamily.value.trim();
     let Father = AccFather.value.trim();
@@ -66,6 +71,7 @@ function addAcc(e)
     }
     else
     {
+            button.after(message);
             warning.style.display = 'none';
             let Object = {names:Name,family:Family,father:Father,date:AccDate.value, year:AccYear.value, faculty:Faculty, 
             deploy ()
@@ -108,153 +114,154 @@ function addAcc(e)
         Object.deploy();
         array.push(Object);
         form.reset();
+        
     }
     
 }
 
-let namecount = 0, familycount = 0, fathercount = 0, datecount = 0, yearcount = 0, facultycount =0; 
-function sortName(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.names < next.names) return -1;
-            if (prev.names < next.names) return 1;
-            })   
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.names > next.names) return -1;
-        if (prev.names > next.names) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
-function sortFamily(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.family < next.family) return -1;
-            if (prev.family < next.family) return 1;
-            })
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.family > next.family) return -1;
-        if (prev.family > next.family) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
-function sortFather(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.father < next.father) return -1;
-            if (prev.father < next.father) return 1;
-            })
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.father > next.father) return -1;
-        if (prev.father > next.father) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
-function sortDate(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.date < next.date) return -1;
-            if (prev.date < next.date) return 1;
-            })
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.date > next.date) return -1;
-        if (prev.date > next.date) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
-function sortYear(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.year < next.year) return -1;
-            if (prev.year < next.year) return 1;
-            })
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.year > next.year) return -1;
-        if (prev.year > next.year) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
-function sortFaculty(count)
-{  
-    if(count%2 == 0)
-    {
-        array.sort((prev,next)=>{
-            if(prev.faculty < next.faculty) return -1;
-            if (prev.faculty < next.faculty) return 1;
-            })
-    }
-    else if(count%2 ==1)
-    {
-        array.sort((prev,next)=>{
-        if(prev.faculty > next.faculty) return -1;
-        if (prev.faculty > next.faculty) return 1;
-        })
-    }
-    AccContainer.innerHTML = '';
-    for(let i = 0; i < array.length; i++)
-    {
-        array[i].deploy();
-    }
-}
+// let namecount = 0, familycount = 0, fathercount = 0, datecount = 0, yearcount = 0, facultycount =0; 
+// function sortName(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.names < next.names) return -1;
+//             if (prev.names < next.names) return 1;
+//             })   
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.names > next.names) return -1;
+//         if (prev.names > next.names) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
+// function sortFamily(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.family < next.family) return -1;
+//             if (prev.family < next.family) return 1;
+//             })
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.family > next.family) return -1;
+//         if (prev.family > next.family) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
+// function sortFather(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.father < next.father) return -1;
+//             if (prev.father < next.father) return 1;
+//             })
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.father > next.father) return -1;
+//         if (prev.father > next.father) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
+// function sortDate(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.date < next.date) return -1;
+//             if (prev.date < next.date) return 1;
+//             })
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.date > next.date) return -1;
+//         if (prev.date > next.date) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
+// function sortYear(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.year < next.year) return -1;
+//             if (prev.year < next.year) return 1;
+//             })
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.year > next.year) return -1;
+//         if (prev.year > next.year) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
+// function sortFaculty(count)
+// {  
+//     if(count%2 == 0)
+//     {
+//         array.sort((prev,next)=>{
+//             if(prev.faculty < next.faculty) return -1;
+//             if (prev.faculty < next.faculty) return 1;
+//             })
+//     }
+//     else if(count%2 ==1)
+//     {
+//         array.sort((prev,next)=>{
+//         if(prev.faculty > next.faculty) return -1;
+//         if (prev.faculty > next.faculty) return 1;
+//         })
+//     }
+//     AccContainer.innerHTML = '';
+//     for(let i = 0; i < array.length; i++)
+//     {
+//         array[i].deploy();
+//     }
+// }
 
-let buttonName = document.querySelector('#nameButton');
-buttonName.addEventListener('click',()=>{sortName(namecount);namecount++});
-let buttonFamily = document.querySelector('#familyButton');
-buttonFamily.addEventListener('click',()=>{sortFamily(familycount);familycount++});
-let buttonFather = document.querySelector('#fatherButton');
-buttonFather.addEventListener('click',()=>{sortFather(fathercount);fathercount++});
-let buttonDate = document.querySelector('#dateButton');
-buttonDate.addEventListener('click',()=>{sortDate(datecount);datecount++});
-let buttonYear = document.querySelector('#yearButton');
-buttonYear.addEventListener('click',()=>{sortYear(yearcount);yearcount++});
-let buttonFaculty = document.querySelector('#facultyButton');
-buttonFaculty.addEventListener('click',()=>{sortYear(facultycount);facultycount++});
+// let buttonName = document.querySelector('#nameButton');
+// buttonName.addEventListener('click',()=>{sortName(namecount);namecount++});
+// let buttonFamily = document.querySelector('#familyButton');
+// buttonFamily.addEventListener('click',()=>{sortFamily(familycount);familycount++});
+// let buttonFather = document.querySelector('#fatherButton');
+// buttonFather.addEventListener('click',()=>{sortFather(fathercount);fathercount++});
+// let buttonDate = document.querySelector('#dateButton');
+// buttonDate.addEventListener('click',()=>{sortDate(datecount);datecount++});
+// let buttonYear = document.querySelector('#yearButton');
+// buttonYear.addEventListener('click',()=>{sortYear(yearcount);yearcount++});
+// let buttonFaculty = document.querySelector('#facultyButton');
+// buttonFaculty.addEventListener('click',()=>{sortYear(facultycount);facultycount++});
