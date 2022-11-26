@@ -15,8 +15,31 @@ body {
   font-weight: 300;
   height: 100vh;
   position: relative;
+  -webkit-animation-name: fadeBlack;
+          animation-name: fadeBlack;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
+@-webkit-keyframes fadeBlack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeBlack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #gameStart-button {
   height: 120px;
   width: 160px;
@@ -25,6 +48,16 @@ body {
   border-radius: 20px;
   text-align: center;
   color: #0fa;
+}
+
+#gameStart-button:hover {
+  height: 120px;
+  width: 160px;
+  background-color: rgb(50, 136, 0);
+  border: 1px solid rgb(21, 255, 0);
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(0, 255, 0);
 }
 
 .gameStart-text {
@@ -104,12 +137,59 @@ body {
   top: 60%;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 #buttonNovel:active {
   background-color: black;
   box-shadow: none;
   color: rgb(167, 167, 167);
+}
+
+#blue {
+  display: none;
+  height: 140px;
+  width: 200px;
+  background-color: rgb(16, 13, 59);
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(58, 110, 206), 0 0 82px rgb(94, 185, 238), 0 0 92px rgb(27, 113, 226), 0 0 102px rgb(28, 158, 233), 0 0 151px rgb(43, 118, 231);
+  font-family: "PT Sans Narrow", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: 1px solid rgb(0, 31, 206);
+  border-radius: 20px;
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(15, 115, 155), 0 0 82px rgb(16, 102, 230), 0 0 92px rgb(11, 112, 151), 0 0 102px rgb(64, 106, 245), 0 0 151px rgb(18, 71, 133);
+  text-align: center;
+}
+
+#red {
+  display: none;
+  height: 140px;
+  width: 200px;
+  background-color: rgb(134, 0, 0);
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(248, 58, 58), 0 0 82px rgb(253, 15, 15), 0 0 92px rgb(223, 85, 85), 0 0 102px rgb(151, 51, 51), 0 0 151px rgb(211, 104, 104);
+  font-family: "PT Sans Narrow", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: 1px solid rgb(158, 0, 0);
+  border-radius: 20px;
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  text-align: center;
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(243, 68, 68), 0 0 82px rgb(219, 33, 33), 0 0 92px rgb(219, 102, 102), 0 0 102px rgb(241, 39, 39), 0 0 151px rgb(255, 45, 45);
+}
+
+#blue:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(84, 255, 241), 0 0 82px rgb(96, 236, 255), 0 0 92px rgb(153, 243, 255), 0 0 102px rgb(109, 245, 250), 0 0 151px rgb(91, 255, 255);
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(66, 227, 255), 0 0 82px rgb(54, 228, 219), 0 0 92px rgb(38, 248, 255), 0 0 102px rgb(28, 215, 240), 0 0 151px rgb(41, 226, 250);
+}
+
+#red:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(235, 99, 128), 0 0 82px rgb(192, 45, 106), 0 0 92px rgb(255, 166, 166), 0 0 102px rgb(185, 131, 138), 0 0 151px rgb(255, 110, 154);
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(255, 12, 215), 0 0 82px rgb(255, 23, 166), 0 0 92px rgb(219, 19, 79), 0 0 102px rgb(255, 22, 255), 0 0 151px rgb(255, 32, 236);
 }
 
 .interface {
@@ -171,7 +251,8 @@ body {
 
 #text {
   position: absolute;
-  top: 30%;
+  top: 35%;
   width: 100%;
   text-align: center;
+  background-color: rgb(0, 0, 0);
 }/*# sourceMappingURL=RayOfHope.css.map */

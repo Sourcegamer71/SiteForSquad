@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="RayOfHope/RayOfHope.css">
-    <script defer src="RayOfHope/RayOfHope.js"></script>
+    <script type="module" defer src="RayOfHope/RayOfHope.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,11 @@
         </div>
         <div id="game">
             <div id="text">Этот мир</div>
-          <div class="buttonNovel-container"><button id="buttonNovel">Далее</button></div>  
+          <div class="buttonNovel-container">
+            <button id="blue">Принять</button>
+            <button id="buttonNovel">Далее</button>
+            <button id="red">Отказаться</button>
+        </div>  
           <div class="interface">
             <a href="index.html"><div><button id="exit">Выход</button></div></a>
             <div class="charpters_container">
