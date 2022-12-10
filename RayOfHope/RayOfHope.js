@@ -102,10 +102,7 @@ function novel()
     choice((mainArray5.length +63),true,false, 'Ненавижу это', 'Мне это нравится');
     choice((mainArray6.length +39),false,true, 'Я люблю тебя', 'Я не люблю тебя');
     choice((mainArray7.length +90),true,false, 'Лгу', 'Не лгу');
-
-
-    textCount++;
-    
+    textCount++;  
     timeout = setInterval(()=>{
         character++;
         let newstr = str.substr(0,character);
@@ -185,7 +182,7 @@ function novel()
     }
 
 
-    if(blueCount == true && redCount == false  && textCount == mainArray8.length)
+    if(blueCount == true && redCount == false  && textCount == (mainArray9.length-1))
     {
         mainArray9.concat(textArray12);
         gameDiv.style.backgroundImage = 'url(RayOfHope/31.jpg)';
@@ -196,7 +193,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount == true && redCount == true && textCount == mainArray8.length)
+    if(blueCount == true && redCount == true && textCount == (mainArray9.length-1))
     {
         mainArray9.concat(textArray14);
         gameDiv.style.backgroundImage = 'url(RayOfHope/33.jpg)'
@@ -207,7 +204,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount == false && redCount == true && textCount == mainArray8.length)
+    if(blueCount == false && redCount == true && textCount == (mainArray9.length-1))
     {
         mainArray9.concat(textArray13);
         gameDiv.style.backgroundImage = 'url(RayOfHope/32.jpg)'
@@ -218,7 +215,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount == false && redCount == false && textCount == mainArray8.length)
+    if(blueCount == false && redCount == false && textCount == (mainArray9.length-1))
     {
         mainArray9.concat(textArray11);
         gameDiv.style.backgroundImage = 'url(RayOfHope/34.jpg)'
