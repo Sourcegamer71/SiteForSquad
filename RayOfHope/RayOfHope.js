@@ -44,6 +44,10 @@ let mainArray6 = mainArray5.concat(textArray7);
 let mainArray7 = mainArray6.concat(textArray8);
 let mainArray8 = mainArray7.concat(textArray9);
 let mainArray9 = mainArray8.concat(textArray10);
+let mainArray10 = mainArray9.concat(textArray11);
+let mainArray11 = mainArray9.concat(textArray12);
+let mainArray12 = mainArray9.concat(textArray13);
+let mainArray13 = mainArray9.concat(textArray14);
 
 
 let char1 = document.querySelector('#char1');
@@ -58,8 +62,51 @@ let char9 = document.querySelector('#char9');
 let char10 = document.querySelector('#char10');
 
 function novel()
-{
-    console.log(textCount)
+{ 
+       if(blueCount == true && redCount == false  && textCount == (mainArray9.length-2))
+    {
+        mainArray9 = mainArray11;
+        gameDiv.style.backgroundImage = 'url(RayOfHope/31.jpg)';
+        if(textCount == mainArray9.length)
+        {
+            startGameWindow.style.display = 'none';
+            gameDiv.style.display = 'block';
+            textCount == 0
+        }
+    }
+    if(blueCount == true && redCount == true && textCount == (mainArray9.length-2))
+    {
+        mainArray9 = mainArray13;
+        gameDiv.style.backgroundImage = 'url(RayOfHope/33.jpg)'
+        if(textCount == mainArray9.length)
+        {
+            startGameWindow.style.display = 'none';
+            gameDiv.style.display = 'block';
+            textCount == 0
+        }
+    }
+    if(blueCount == false && redCount == true && textCount == (mainArray9.length-2))
+    {
+        mainArray9 = mainArray12;
+        gameDiv.style.backgroundImage = 'url(RayOfHope/32.jpg)'
+        if(textCount == mainArray9.length)
+        {
+            startGameWindow.style.display = 'none';
+            gameDiv.style.display = 'block';
+            textCount == 0
+        }
+    }
+    if(blueCount == false && redCount == false && textCount == (mainArray9.length-2))
+    {
+        mainArray9 = mainArray10
+        gameDiv.style.backgroundImage = 'url(RayOfHope/34.jpg)'
+        if(textCount == mainArray9.length)
+        {
+            startGameWindow.style.display = 'none';
+            gameDiv.style.display = 'block';
+            textCount == 0
+        }
+    }
     let str = mainArray9[textCount];
     let length = str.length;
     let character = 0;
@@ -81,7 +128,6 @@ function novel()
                 blueButton.style.display = 'none';
                 redButton.style.display = 'none';
                 buttonNovel.style.display = 'block';
-                console.log(blueCount);
             })
            redButton.addEventListener('click',()=>
             {
@@ -89,7 +135,6 @@ function novel()
                 blueButton.style.display = 'none';
                 redButton.style.display = 'none';
                 buttonNovel.style.display = 'block';
-                console.log(redCount);
             })
         }
     }
@@ -111,9 +156,9 @@ function novel()
         {
             timeout = clearInterval(timeout);
         }   
-    },20)
+    },24)
     buttonNovel.setAttribute('disabled','true');
-    setTimeout(()=>{buttonNovel.removeAttribute('disabled')},500);
+    setTimeout(()=>{buttonNovel.removeAttribute('disabled')},1500);
 
 
     if(textCount == textArray.length){gameDiv.style.backgroundImage = 'url(RayOfHope/8.jpg)';}
@@ -180,55 +225,6 @@ function novel()
     {
         char9.disabled = false;
     }
-
-
-    if(blueCount == true && redCount == false  && textCount == (mainArray9.length-1))
-    {
-        mainArray9.concat(textArray12);
-        gameDiv.style.backgroundImage = 'url(RayOfHope/31.jpg)';
-        if(textCount == mainArray9.length)
-        {
-            startGameWindow.style.display = 'none';
-            gameDiv.style.display = 'block';
-            textCount == 0
-        }
-    }
-    if(blueCount == true && redCount == true && textCount == (mainArray9.length-1))
-    {
-        mainArray9.concat(textArray14);
-        gameDiv.style.backgroundImage = 'url(RayOfHope/33.jpg)'
-        if(textCount == mainArray9.length)
-        {
-            startGameWindow.style.display = 'none';
-            gameDiv.style.display = 'block';
-            textCount == 0
-        }
-    }
-    if(blueCount == false && redCount == true && textCount == (mainArray9.length-1))
-    {
-        mainArray9.concat(textArray13);
-        gameDiv.style.backgroundImage = 'url(RayOfHope/32.jpg)'
-        if(textCount == mainArray9.length)
-        {
-            startGameWindow.style.display = 'none';
-            gameDiv.style.display = 'block';
-            textCount == 0
-        }
-    }
-    if(blueCount == false && redCount == false && textCount == (mainArray9.length-1))
-    {
-        mainArray9.concat(textArray11);
-        gameDiv.style.backgroundImage = 'url(RayOfHope/34.jpg)'
-        if(textCount == mainArray9.length)
-        {
-            startGameWindow.style.display = 'none';
-            gameDiv.style.display = 'block';
-            textCount == 0
-        }
-    }
-
-
-
     char1.addEventListener('click',()=>{textCount=1;
         gameDiv.style.backgroundImage = 'url(RayOfHope/1.jpg)';
         text.textContent = textArray[textCount];})

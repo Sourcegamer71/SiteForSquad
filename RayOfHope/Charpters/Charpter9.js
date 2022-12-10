@@ -1,5 +1,5 @@
 export {textArray9}
-let textArray9 = ['',
+let textArray9 = ['222222222',
 '-Этот мир',
 '-Так красив',
 '-За него стоит сражаться',
