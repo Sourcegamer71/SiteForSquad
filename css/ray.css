@@ -1,0 +1,30 @@
+.ray_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.ray_content img {
+  height: 50vh;
+}
+
+.ray_h1 {
+  margin: 10vh auto;
+  font-size: 32px;
+  text-align: center;
+}
+
+.ray_h2 {
+  margin: 10vh auto;
+  font-size: 23px;
+  text-align: center;
+}
+
+.vid {
+  margin: 10vh auto;
+  width: 70vw;
+  text-align: center;
+}
+
+.ray_text {
+  width: 40vw;
+}/*# sourceMappingURL=ray.css.map */

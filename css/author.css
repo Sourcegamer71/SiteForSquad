@@ -1,0 +1,11 @@
+.author_container {
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+  padding-top: 50vh;
+  text-align: center;
+}
+
+.author_text {
+  color: rgb(231, 231, 231);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}/*# sourceMappingURL=author.css.map */

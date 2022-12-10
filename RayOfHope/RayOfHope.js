@@ -18,7 +18,8 @@ let gameDiv = document.querySelector('#game');
 let buttonNovel = document.querySelector('#buttonNovel');
 let text = document.querySelector('#text');
 let startGame = document.querySelector('#gameStart-button');
-let blueCount = 0;
+let blueCount = true;
+let redCount = false;
 let blueButton = document.querySelector('#blue');
 let redButton = document.querySelector('#red');
 
@@ -34,8 +35,6 @@ function Start()
     gameDiv.style.display = 'block';
 }
 
-console.log(textArray.length);
-
 let mainArray = textArray.concat(textArray2);
 let mainArray2 = mainArray.concat(textArray3);
 let mainArray3 = mainArray2.concat(textArray4);
@@ -45,7 +44,6 @@ let mainArray6 = mainArray5.concat(textArray7);
 let mainArray7 = mainArray6.concat(textArray8);
 let mainArray8 = mainArray7.concat(textArray9);
 let mainArray9 = mainArray8.concat(textArray10);
-console.log(mainArray8);
 
 
 let char1 = document.querySelector('#char1');
@@ -79,7 +77,7 @@ function novel()
             redButton.textContent = redText;
             blueButton.addEventListener('click',()=>
             {
-                blueCount = blueCount + blue;
+                blueCount = blue;
                 blueButton.style.display = 'none';
                 redButton.style.display = 'none';
                 buttonNovel.style.display = 'block';
@@ -87,23 +85,23 @@ function novel()
             })
            redButton.addEventListener('click',()=>
             {
-                blueCount = blueCount + red;
+                redCount = red;
                 blueButton.style.display = 'none';
                 redButton.style.display = 'none';
                 buttonNovel.style.display = 'block';
-                console.log(blueCount);
+                console.log(redCount);
             })
         }
     }
-    choice(11,100,0, 'Взять руку', 'Не брать его руку');
-    choice((mainArray.length +101),0,1, 'Простить', 'Не прощать');
-    choice((mainArray2.length +32),0,1, 'Поднять', 'Не поднимать');
-    choice((mainArray3.length +31),1,0, 'Взять пакет', 'Не брать пакет');
-    choice((mainArray4.length +28),1,0, 'Ударить его', 'Ничего не делать');
-    choice((mainArray5.length +17),1,-100, 'Да', 'Нет');
-    choice((mainArray5.length +63),0,1, 'Ненавижу это', 'Мне это нравится');
-    choice((mainArray6.length +39),0,1, 'Я люблю тебя', 'Я не люблю тебя');
-    choice((mainArray7.length +90),0,1, 'Лгу', 'Не лгу');
+    choice(11,true,false, 'Взять руку', 'Не брать его руку');
+    choice((mainArray.length +100),false,true, 'Простить', 'Не прощать');
+    choice((mainArray2.length +31),true,false, 'Поднять', 'Не поднимать');
+    choice((mainArray3.length +31),false,true, 'Взять пакет', 'Не брать пакет');
+    choice((mainArray4.length +28),true,false, 'Ударить его', 'Ничего не делать');
+    choice((mainArray5.length +17),false,true, 'Да', 'Нет');
+    choice((mainArray5.length +63),true,false, 'Ненавижу это', 'Мне это нравится');
+    choice((mainArray6.length +39),false,true, 'Я люблю тебя', 'Я не люблю тебя');
+    choice((mainArray7.length +90),true,false, 'Лгу', 'Не лгу');
 
 
     textCount++;
@@ -187,7 +185,7 @@ function novel()
     }
 
 
-    if(blueCount > 29 && textCount == mainArray8.length)
+    if(blueCount == true && redCount == false  && textCount == mainArray8.length)
     {
         mainArray9.concat(textArray12);
         gameDiv.style.backgroundImage = 'url(RayOfHope/31.jpg)';
@@ -198,7 +196,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount > 14 && blueCount < 30 && textCount == mainArray8.length)
+    if(blueCount == true && redCount == true && textCount == mainArray8.length)
     {
         mainArray9.concat(textArray14);
         gameDiv.style.backgroundImage = 'url(RayOfHope/33.jpg)'
@@ -209,7 +207,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount < -30 && textCount == mainArray8.length)
+    if(blueCount == false && redCount == true && textCount == mainArray8.length)
     {
         mainArray9.concat(textArray13);
         gameDiv.style.backgroundImage = 'url(RayOfHope/32.jpg)'
@@ -220,7 +218,7 @@ function novel()
             textCount == 0
         }
     }
-    if(blueCount > 0 && blueCount < 15 && textCount == mainArray8.length)
+    if(blueCount == false && redCount == false && textCount == mainArray8.length)
     {
         mainArray9.concat(textArray11);
         gameDiv.style.backgroundImage = 'url(RayOfHope/34.jpg)'

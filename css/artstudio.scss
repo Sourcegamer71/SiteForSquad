@@ -4,21 +4,25 @@ body
 }
 .art-container
 {
+    margin: 0 auto;
     width: 90%;
     background-color: rgb(241, 241, 241);
-    height: 50vh;
+    height: auto;
     text-align: center;
+    
 }
 .art-flex-container
 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: auto;
 }
 .art-flex
 {
     height: 30vh;
     width: 20vh;
+    transition-duration: 1s;
     border: 1px solid black;
     margin: 3vh 2vw;
     img
@@ -38,4 +42,8 @@ body
         width: 100%;
         font-size: 0.6rem;
     }
+}
+.art-flex:hover{
+    height: 40vh;
+    width: 25vh;
 }

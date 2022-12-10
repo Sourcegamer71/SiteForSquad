@@ -1,0 +1,37 @@
+.container {
+  margin-bottom: 10vh;
+}
+
+.others_h1 {
+  font-size: 27px;
+  margin: 5vh auto;
+}
+
+.others_h2 {
+  font-size: 23px;
+  margin: 6vh auto;
+}
+
+.others {
+  text-align: center;
+}
+
+audio {
+  margin: 2vh auto;
+}
+
+.eroNew {
+  height: 40vh;
+  width: auto;
+}
+
+@media (max-width: 650px) {
+  iframe {
+    width: 300px;
+    height: auto;
+  }
+  .eroNew {
+    width: 90vw;
+    height: auto;
+  }
+}/*# sourceMappingURL=others.css.map */
