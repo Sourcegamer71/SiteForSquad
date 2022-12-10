@@ -1,4 +1,4 @@
-let c = 110;
+let c = 60;
 let timecount = c; 
 let count = 0;
 let check3 = document.querySelector('#check3'); 
