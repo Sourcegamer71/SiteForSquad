@@ -34,6 +34,11 @@
   text-align: center;
 }
 
+.rayA {
+  margin: 0 auto;
+  text-align: center;
+}
+
 @media (max-width: 650px) {
   iframe {
     width: 300px;
