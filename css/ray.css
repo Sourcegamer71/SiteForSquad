@@ -27,4 +27,30 @@
 
 .ray_text {
   width: 40vw;
+}
+
+.rayP {
+  margin: 5vh auto;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  iframe {
+    width: 300px;
+    height: auto;
+  }
+  .ray_h1 {
+    margin: 5vh auto;
+    font-size: 15px;
+  }
+  .ray_h2 {
+    margin: 5vh auto;
+    font-size: 12px;
+  }
+  .ray_text {
+    font-size: 12px;
+  }
+  .rayP {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=ray.css.map */
