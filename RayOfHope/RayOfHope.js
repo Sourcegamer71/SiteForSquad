@@ -225,6 +225,10 @@ function novel()
     {
         char9.disabled = false;
     }
+    if(textCount == mainArray8.length)
+    {
+        char10.disabled = false;
+    }
     char1.addEventListener('click',()=>{textCount=1;
         gameDiv.style.backgroundImage = 'url(RayOfHope/1.jpg)';
         text.textContent = textArray[textCount];})
@@ -244,5 +248,6 @@ function novel()
         gameDiv.style.backgroundImage = 'url(RayOfHope/9.jpg)'; text.textContent = mainArray8[textCount];})
     char9.addEventListener('click',()=>{textCount=mainArray8.length; 
         gameDiv.style.backgroundImage = 'url(RayOfHope/2.jpg)'; text.textContent = mainArray8[textCount];})         
-        
+    char10.addEventListener('click',()=>{textCount=(mainArray9.length-1); 
+            gameDiv.style.backgroundImage = 'url(RayOfHope/2.jpg)'; text.textContent = mainArray8[textCount];})    
 }
